@@ -1,0 +1,251 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(to right, #fff7ae, #f9a8d4);
+}
+
+.wrapper {
+  width: 100%;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  background: #F08080;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #060606;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+nav img {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* text left, image right */
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.hero .copy {
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .copy h1 {
+  margin-left: 1rem;
+}
+
+.hero .copy .cta-btn {
+  margin-left: 2rem;
+}
+
+.lead {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  margin-left: 1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #F08080;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: max-content;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Burger image */
+.hero .panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Gap between sections */
+.section-gap {
+  height: 0.5cm;
+  background-color: #eae7e7;
+}
+
+/* Second Section */
+.second-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  gap: 2rem;
+}
+
+.second-hero .red-box {
+  width: 28rem;
+  height: 18rem;
+  max-width: 90%;
+  background: linear-gradient(#ff7e5f, #e56eaa);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #090808;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  margin-right: 6rem;
+}
+
+.red-box > p:first-child {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.middle-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-text p {
+  margin: 0.3rem 0;
+  font-size: 1.6rem;
+}
+
+.red-box .box-btn {
+  background: linear-gradient(#ff7e5f, #e56eaa);
+  color: #0a0808;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.red-box .box-btn:hover {
+  background: linear-gradient(#ff7e5f, #e56eaa);
+}
+
+/* Image stack */
+.second-hero .image-stack {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex: 1;
+  margin-left: 20rem;
+}
+
+.second-hero .square-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.second-hero .square-images img {
+  width: 18vw;
+  height: 18vw;
+  max-width: 220px;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.second-hero .rectangle-image img {
+  width: 25vw;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  align-self: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr; /* stack text and image */
+    text-align: center;
+  }
+
+  .hero .panel img {
+    width: 80%;       /* shrink image */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .second-hero {
+    flex-direction: column;
+  }
+
+  .second-hero .image-stack {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero .panel img {
+    width: 100%;      /* full width */
+    height: auto;
+    border-radius: 0; /* optional: flush edges */
+  }
+}
+
+@media (max-width: 780px) {
+  nav { padding: 0.8rem 1rem; }
+  nav a { font-size: 0.9rem; }
+  .hero .copy, .second-hero .copy { padding: 1.5rem; }
+  h1 { font-size: 2rem; }
+}
+
+@media (max-width: 420px) {
+  nav a { font-size: 0.8rem; }
+  .lead { font-size: 0.9rem; }
+  nav img { width: 1.2rem; height: 1.2rem; }
+  .middle-text p { font-size: 1.2rem; }
+}
